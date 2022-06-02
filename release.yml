@@ -8,19 +8,6 @@ on:
 permissions:
   contents: write
 
-jobs:
-  create-release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create Release
-        uses: ncipollo/release-action@v1
-        with:
-          allowUpdates: true
-          omitBody: true
-          prerelease: true
-          draft: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-
   build-qemu:
     runs-on: ubuntu-latest
     name: Build aarch64 on ubuntu20.04
